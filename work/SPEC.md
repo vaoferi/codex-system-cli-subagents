@@ -13,6 +13,7 @@
 - Codex не керує hidden terminal для виконання роботи.
 - Codex надсилає задачу до локального `freebuff2api` і отримує результат назад у компактному форматі.
 - Автоматичний queue/rotate/multi-account режим у v1 не робимо.
+- Якщо `freebuff.exe` запущений, але HTTP listener відсутній, це трактуємо як неповну інсталяцію bridge і спершу робимо `repair-first`, а не self-work.
 
 ## Що змінюємо
 - Оновлюємо plugin scaffold у workspace-root `.agents/plugins/system-cli-subagents` під `freebuff2api` worker bridge.
@@ -41,6 +42,7 @@
 - API key може бути увімкнений на сервері, і клієнт має передавати його правильно.
 - Набір моделей залежить від реально доступного `/v1/models`, тому auto-select має мати fallback.
 - Відповідь моделі може бути невалідним JSON, тому bridge має нормалізувати результат.
+- Якщо bridge лише стартує процес, але не відкриває порт, потрібен repair-first цикл до будь-якого висновку про “працює/не працює”.
 
 ## План
 1. Додати MCP server для `freebuff2api`.

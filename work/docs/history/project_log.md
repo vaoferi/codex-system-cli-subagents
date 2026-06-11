@@ -2,6 +2,13 @@
 
 ## 2026-06-11
 
+- Задача: Repair-first rule for Freebuff bridge.
+- Знайдено: `freebuff.exe` може бути запущений без HTTP listener, а це означає не “живий bridge”, а неповну інсталяцію або зламаний runtime surface.
+- Змінено: у canonical skill і робочій копії явно зафіксовано `repair-first`-поведінку перед self-work; у SPEC додано той самий контракт.
+- Чому так: Codex не має робити вигляд, що bridge працює, якщо є лише процес без порту; спочатку треба лагодити інсталяцію/конфіг/endpoint.
+- Перевірено: оновлення skill/spec/log у workspace і mirrored canonical skill.
+- Ризики: якщо fallback script або service launch path зміниться, `repair-first` правило треба буде знову звірити з фактичним runtime.
+
 - Задача: Freebuff Side-Terminal V1.
 - Знайдено: у системі є `freebuff`; `openclaude` тимчасово виключено з v1; `opencode` не входить у цю версію.
 - Змінено: plugin, skill, launcher, SPEC і user-facing output переведено на `freebuff`-only ручну інтерактивну сесію з пріоритетом Windows Terminal.
