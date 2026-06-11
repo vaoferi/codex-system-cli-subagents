@@ -1,35 +1,29 @@
 # Codex system-cli-subagents
 
-Це репозиторій із результатом роботи над `system-cli-subagents`.
+Repo з результатом роботи над `system-cli-subagents`.
 
-## Що всередині
+## Що тут
 
-- `.agents/plugins/system-cli-subagents` - встановлений Codex plugin
-- `outputs/system-cli-subagents.md` - короткий user-facing опис
-- `work/SPEC.md` - специфікація задачі
-- `work/docs/history/project_log.md` - історія змін і перевірок
+- `.agents/plugins/system-cli-subagents` - сам plugin
+- `outputs/system-cli-subagents.md` - короткий опис для використання
+- `work/SPEC.md` - специфікація
+- `work/docs/history/project_log.md` - історія змін
+- `skillopt/` - каркас постійного поліпшення skill-доків через SkillOpt
 
-## Що вміє
-
-- оффлоадити дослідницькі та чорнові задачі у локальний `freebuff2api`
-- вибирати модель автоматично за профілем
-- повертати короткий JSON для Codex
-- працювати через fallback script, якщо MCP tool не підхопився в поточному thread
-
-## Як використовувати
-
-У Codex пиши так:
+## Як використовувати зараз
 
 ```text
-[@system-cli-subagents](plugin://system-cli-subagents@personal) <твоя задача>
+[@system-cli-subagents](plugin://system-cli-subagents@personal) <задача>
 ```
 
-Або запускай fallback script напряму:
+Fallback без MCP:
 
 ```powershell
 pwsh -NoLogo -NoProfile -File ".agents/plugins/system-cli-subagents/scripts/invoke-freebuff-worker.ps1" -Profile research -Task "..."
 ```
 
-## Примітка
+## Що важливо
 
-У цій збірці прямий MCP tool `freebuff_delegate` є в файлах плагіна, але практичний робочий шлях у Codex зараз іде через fallback script.
+- `freebuff2api` тут працює як worker bridge
+- прямий `freebuff_delegate` є в файлах плагіна, але current Codex thread може піти через fallback script
+- `SkillOpt` використовується як цикл для покращення `SKILL.md`, а не як model fine-tuning

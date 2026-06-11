@@ -36,3 +36,10 @@
 - Чому так: personal plugin discovery для Codex спирається на реальний source root + cache layer; без правильного source path UI може показувати плагін, але tool set у новому thread не підхоплюється.
 - Перевірено: файлова наявність cache copy, повторна перевірка thread-у показала, що старий thread ще не бачить tool set mid-flight.
 - Ризики: поточний thread не hot-reload-иться; для остаточної перевірки потрібен fresh thread/app reload, але зараз уже виправлено неправильний attach root.
+
+- Задача: Public repo, README trim, SkillOpt loop.
+- Знайдено: repo вже був готовий до публікації, але README був занадто довгим і не мав окремого self-improvement path для skill-доків.
+- Змінено: repo переведено у public, README скорочено, додано `skillopt/README.md`, `skillopt/best_skill.md`, і `skills/skillopt-self-improvement/SKILL.md` для validation-gated SkillOpt loop.
+- Чому так: це дає окремий, явний шлях для майбутніх поліпшень skill-доків без вигаданих можливостей.
+- Перевірено: GitHub repo visibility, локальні файли репо, робочий fallback script, і наявність проміжного best-skill artifact.
+- Ризики: SkillOpt runner тут ще не інтегрований як автоматичний CI job; поки це documented loop plus promoted artifact.

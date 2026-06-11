@@ -59,3 +59,9 @@
 Use Freebuff Worker Bridge to: <твоя задача тут>
 Return only compact JSON with summary, findings, next_steps, risks, open_questions.
 ```
+
+## SkillOpt
+
+- Поточний цикл покращення skill-доків: `skillopt/README.md`
+- Поточний промотований текст: `skillopt/best_skill.md`
+- Skill для запуску validation-gated loop: `.agents/plugins/system-cli-subagents/skills/skillopt-self-improvement/SKILL.md`
