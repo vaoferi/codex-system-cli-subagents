@@ -1,0 +1,10 @@
+work/.deps/
+work/.agents/
+work/plugins/
+**/__pycache__/
+*.pyc
+*.pyo
+*.log
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal

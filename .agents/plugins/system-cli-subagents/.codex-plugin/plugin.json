@@ -1,0 +1,18 @@
+{
+  "name": "system-cli-subagents",
+  "version": "0.2.2+codex.20260611153000",
+  "description": "Dispatch research and draft tasks to a single-account freebuff2api worker.",
+  "author": {
+    "name": "Local developer"
+  },
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Freebuff Worker Bridge",
+    "shortDescription": "Offload draft work to freebuff2api.",
+    "longDescription": "Use a local freebuff2api service as a single-account worker for research, drafting, and code exploration. Codex sends tasks, the worker returns compact structured results, and no native subagent or multi-account pool is promised.",
+    "developerName": "Local developer",
+    "category": "Productivity",
+    "capabilities": [],
+    "defaultPrompt": "Send this task to the local freebuff2api worker and return a concise structured result."
+  }
+}
